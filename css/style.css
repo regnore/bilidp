@@ -1,0 +1,351 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "montserrat";
+  overflow: hidden;
+}
+
+body {
+  display: inline;
+  background-image: repeating-linear-gradient(125deg, #f1c40f80 0%, #f1c40f 10%, #e67e2280 20%, #e67e22 30%, #9b59b680 40%, #9b59b6 50%, #3498db80 60%, #3498db 70%, #1abc9c80 80%, #1abc9c 90%, #f1c40f80 100%);
+  animation: bganimation 60s infinite linear;
+  background-color: none;
+  background-size: 400%;
+}
+
+#click {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+#say {
+  display: block;
+  position: absolute;
+  width: 20%;
+  padding: 10px;
+  background-color: #FFFFFF00;
+  background-image: #00000010;
+  border-radius: 10px;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  text-shadow: 0px 5px 5px #01010170;
+  transition: 1s all;
+  top: 5%;
+}
+
+#title {
+  position: absolute;
+  height: 10px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  text-shadow: 10px 10px 10px #10101080;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 1s all;
+}
+
+
+@keyframes bganimation {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes tremble {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(-50%, -50%) rotate(10deg);
+  }
+
+  60% {
+    transform: translate(-50%, -50%) rotate(-10deg);
+  }
+
+  95% {
+    transform: translate(-50%, -50%) rotate(5deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0px;
+  height: 0px;
+  background: #f1f1f1;
+  border-radius: 30%;
+  box-shadow: 0 5px 15px -5px #00000070;
+  color: #ecf0f1;
+  overflow: hidden;
+  transition: 1s all;
+  text-align: center;
+  background-image: radial-gradient(#3498db, pink);
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 10px 10px 15px 5px #00000070;
+  animation: rotate1 15s infinite;
+}
+
+.btn img:hover {
+  transform: translate(-50%, -50%) scale(1.1, 1.1);
+}
+
+@keyframes rotate1 {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+
+  20% {
+    transform: translate(-50%, -50%) rotateZ(15deg);
+  }
+
+  30% {
+    transform: translate(-50%, -50%);
+  }
+
+  40% {
+    transform: translate(-50%, -50%) rotateZ(-15deg);
+  }
+
+  50% {
+    transform: translate(-50%, -50%);
+  }
+
+  60% {
+    transform: translate(-50%, -50%) rotateX(15deg);
+  }
+
+  70% {
+    transform: translate(-50%, -50%);
+  }
+
+  80% {
+    transform: translate(-50%, -50%) rotateX(-15deg);
+  }
+
+  0% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.btn img {
+  width: 20vh;
+  height: 20vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: pink;
+  transition: .5s all;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  transform: rotate(45deg);
+  left: -110%;
+  top: 90%;
+  background-image: repeating-linear-gradient(60deg, #1abc9c80 100px, #1abc9c80 200px, #3498db80 200px, #3498db80 300px, #9b59b680 300px, #9b59b680 400px, #e74c3c80 400px, #e74c3c80 500px, #f1c40f80 500px, #f1c40f80 600px),
+    repeating-linear-gradient(-60deg, #1abc9c80 100px, #1abc9c80 200px, #3498db80 200px, #3498db80 300px, #9b59b680 300px, #9b59b680 400px, #e74c3c80 400px, #e74c3c80 500px, #f1c40f80 500px, #f1c40f80 600px),
+    repeating-linear-gradient(180deg, #1abc9c80 100px, #1abc9c80 200px, #3498db80 200px, #3498db80 300px, #9b59b680 300px, #9b59b680 400px, #e74c3c80 400px, #e74c3c80 500px, #f1c40f80 500px, #f1c40f80 600px);
+}
+
+
+.btn:hover::before {
+  animation: a 0.7s 1;
+  top: -10%;
+  left: -10%;
+}
+
+@keyframes a {
+  0% {
+    left: -110%;
+    top: 90%;
+  }
+
+  50% {
+    left: 10%;
+    top: -30%;
+  }
+
+  100% {
+    top: -10%;
+    left: -10%;
+  }
+
+}
+
+#btn3 {
+  bottom: -75%;
+  left: 50%;
+  width: 250px;
+  height: 75px;
+  background: #10101020;
+  border: 4px solid;
+  color: #353b48;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 25px;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: 1s all;
+}
+
+#btn3::before,
+#btn3::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 4px;
+  background: white;
+  transform: skewX(50deg);
+  transition: .4s linear;
+}
+
+#btn3::before {
+  top: -4px;
+  left: 10%;
+}
+
+#btn3::after {
+  bottom: -4px;
+  right: 10%;
+}
+
+#btn3:hover::before {
+  left: 80%;
+}
+
+#btn3:hover::after {
+  right: 80%;
+}
+
+#input1,
+#input2 {
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 0px solid #353b48;
+  padding: 14px 10px;
+  width: 60px;
+  height: 50px;
+  outline: none;
+  border-radius: 60px;
+  transition: 0.25s;
+  font-size: 30px;
+  color: white;
+  box-shadow: -10px 1px 15px 1px #00000070;
+  text-shadow: -10px 1px 15px 1px #00000070;
+  caret-color: transparent;
+}
+
+#input1:focus,
+#input2:focus {
+  width: 80px;
+  border-color: #2ecc71;
+  box-shadow: 5px 1px 15px 1px #00000070;
+}
+
+#input1 {
+  position: absolute;
+  left: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#input2 {
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+footer {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+}
+
+@keyframes loading {
+  0% {
+    transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    background-size: 100% 100%;
+  }
+
+  20% {
+    transform: translate(-50%, -50%) rotateX(180deg) rotateY(180deg) rotateZ(180deg) scale(2, 2);
+    background-size: 100% 100%;
+  }
+
+  30% {
+    transform: translate(-50%, -50%) rotateX(180deg) rotateY(180deg) rotateZ(180deg) scale(2, 2);
+    background-size: 100% 100%;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    background-size: 100% 100%;
+  }
+
+  70% {
+    transform: translate(-50%, -50%) rotateX(180deg) rotateY(180deg) rotateZ(180deg) scale(2, 2);
+    background-size: 100% 100%;
+  }
+
+  80% {
+    transform: translate(-50%, -50%) rotateX(180deg) rotateY(180deg) rotateZ(180deg) scale(2, 2);
+    background-size: 100% 100%;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    background-size: 100% 100%;
+  }
+}
+
+.btn h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0px 0px 10px #000000C0;
+  transition: .5s all;
+}
+
+#coarea {
+  height: 100%;
+  width: 0%;
+  position: absolute;
+  background-image: radial-gradient(#ecf0f1, #7f8c8d);
+  transition: .1s all;
+}
